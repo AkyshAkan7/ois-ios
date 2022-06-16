@@ -55,6 +55,9 @@ class SpecificDocumentViewController: UIViewController {
 
         }
     }
+    @IBAction func savePressed(_ sender: Any) {
+        
+    }
 }
 
 extension SpecificDocumentViewController: DocumentsManagerDelegate {

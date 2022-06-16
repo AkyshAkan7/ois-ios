@@ -87,7 +87,34 @@ struct DocumentsManager {
         request.responseJSON { (data) in
             print(data)
         }
-
+    }
+    
+    func saveDocumentRequest() {
+        let token = defaults.string(forKey: "token")!
+        let headers: HTTPHeaders = [
+            "Authorization": "Bearer " + token
+        ]
+        
+        let request = AF.request("http://localhost:8080/api/v1/dicts/documents/", method: .delete, headers: headers).response {
+            (responseData) in
+            do {
+                if let code = responseData.response?.statusCode {
+                                
+                    if code == 200 {
+                        self.delegate?.shouldUpdateUI(status: true)
+                        
+                    } else if code >= 400 {
+                        self.delegate?.didFailWithError(error: "error occured")
+                    }
+                }
+            } catch {
+                print(error)
+                self.delegate?.didFailWithError(error: error.localizedDescription)
+            }
+        }
+        request.responseJSON { (data) in
+            print(data)
+        }
     }
     
 }
