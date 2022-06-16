@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FzG-Ce-dlz">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -225,7 +225,7 @@
                                         <rect key="frame" x="0.0" y="324" width="382" height="31"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9j0-v7-tFR">
-                                                <rect key="frame" x="0.0" y="0.0" width="167" height="31"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="169" height="31"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="arrow.left" catalog="system" title="Вернуться назад" imagePadding="10"/>
                                                 <connections>
@@ -437,60 +437,150 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="mAJ-LO-8QC">
-                                <rect key="frame" x="0.0" y="88" width="414" height="140"/>
+                                <rect key="frame" x="16" y="88" width="382" height="482"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fal-9Y-tCv">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="40"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pfo-bG-Rt2">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="154"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="building.columns.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="gnD-lC-6Eg">
+                                                <rect key="frame" x="40" y="32" width="90" height="89.5"/>
+                                                <color key="tintColor" name="AccentColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="90" id="R7T-Ds-Nko"/>
+                                                    <constraint firstAttribute="height" constant="90" id="o0f-IS-smj"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Орг. структура" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Zr-EE-dYL">
+                                                <rect key="frame" x="150" y="63.5" width="212" height="27.5"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="23"/>
+                                                <color key="textColor" name="AccentColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                        <gestureRecognizers/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="c2y-b7-L4s"/>
+                                            <constraint firstItem="1Zr-EE-dYL" firstAttribute="centerY" secondItem="gnD-lC-6Eg" secondAttribute="centerY" id="3nB-dY-odW"/>
+                                            <constraint firstItem="gnD-lC-6Eg" firstAttribute="top" secondItem="Pfo-bG-Rt2" secondAttribute="top" constant="32" id="6Si-EO-Y6d"/>
+                                            <constraint firstAttribute="trailing" secondItem="1Zr-EE-dYL" secondAttribute="trailing" constant="20" id="EWR-Wo-76m"/>
+                                            <constraint firstItem="1Zr-EE-dYL" firstAttribute="leading" secondItem="gnD-lC-6Eg" secondAttribute="trailing" constant="20" id="jon-Kn-8JN"/>
+                                            <constraint firstAttribute="bottom" secondItem="gnD-lC-6Eg" secondAttribute="bottom" constant="32" id="lEB-fZ-C0J"/>
+                                            <constraint firstItem="gnD-lC-6Eg" firstAttribute="leading" secondItem="Pfo-bG-Rt2" secondAttribute="leading" constant="40" id="o7o-Mu-zmx"/>
                                         </constraints>
-                                        <color key="tintColor" name="AccentColor"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="building.columns.fill" catalog="system" title="Орг. структура"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <segue destination="WDg-je-fmK" kind="show" id="MLD-OU-zxA"/>
+                                            <outletCollection property="gestureRecognizers" destination="12X-rO-z2y" appends="YES" id="Hgx-5d-vrI"/>
                                         </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kxk-a9-E2d">
-                                        <rect key="frame" x="0.0" y="50" width="414" height="40"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9do-qD-oii">
+                                        <rect key="frame" x="0.0" y="164" width="382" height="154"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rectangle.3.group.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Ubk-po-OIR">
+                                                <rect key="frame" x="40" y="33" width="90" height="87.5"/>
+                                                <color key="tintColor" name="AccentColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="90" id="dpe-Y3-6Vb"/>
+                                                    <constraint firstAttribute="width" constant="90" id="fAu-ew-iGP"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Группы" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="khI-qw-7gd">
+                                                <rect key="frame" x="150" y="63.5" width="212" height="27.5"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="23"/>
+                                                <color key="textColor" name="AccentColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                        <gestureRecognizers/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="7ic-Cu-EQX"/>
+                                            <constraint firstAttribute="bottom" secondItem="Ubk-po-OIR" secondAttribute="bottom" constant="32" id="0AY-1M-qWS"/>
+                                            <constraint firstItem="khI-qw-7gd" firstAttribute="leading" secondItem="Ubk-po-OIR" secondAttribute="trailing" constant="20" id="7hQ-Uo-eWs"/>
+                                            <constraint firstItem="khI-qw-7gd" firstAttribute="centerY" secondItem="Ubk-po-OIR" secondAttribute="centerY" id="raV-fM-A6u"/>
+                                            <constraint firstAttribute="trailing" secondItem="khI-qw-7gd" secondAttribute="trailing" constant="20" id="rxX-HT-YGb"/>
+                                            <constraint firstItem="Ubk-po-OIR" firstAttribute="leading" secondItem="9do-qD-oii" secondAttribute="leading" constant="40" id="tbc-Hi-wpn"/>
+                                            <constraint firstItem="Ubk-po-OIR" firstAttribute="top" secondItem="9do-qD-oii" secondAttribute="top" constant="32" id="x8o-EI-K0K"/>
                                         </constraints>
-                                        <color key="tintColor" name="AccentColor"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="rectangle.3.group.fill" catalog="system" title="Группы"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <segue destination="Rlt-Wq-YOh" kind="show" id="jiZ-nu-hhO"/>
+                                            <outletCollection property="gestureRecognizers" destination="EEu-cg-iNL" appends="YES" id="INt-bI-KIX"/>
                                         </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tvT-0u-x6h">
-                                        <rect key="frame" x="0.0" y="100" width="414" height="40"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3kN-lr-Mwd">
+                                        <rect key="frame" x="0.0" y="328" width="382" height="154"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="signpost.right.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="F7J-tb-qVy">
+                                                <rect key="frame" x="40" y="32" width="90" height="89.5"/>
+                                                <color key="tintColor" name="AccentColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="90" id="PgT-az-Ppu"/>
+                                                    <constraint firstAttribute="height" constant="90" id="gML-kf-hAz"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Должности" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7kn-GC-hhc">
+                                                <rect key="frame" x="150" y="63.5" width="212" height="27.5"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="23"/>
+                                                <color key="textColor" name="AccentColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                        <gestureRecognizers/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="zmu-tK-e42"/>
+                                            <constraint firstItem="F7J-tb-qVy" firstAttribute="leading" secondItem="3kN-lr-Mwd" secondAttribute="leading" constant="40" id="IoR-HH-O87"/>
+                                            <constraint firstItem="7kn-GC-hhc" firstAttribute="leading" secondItem="F7J-tb-qVy" secondAttribute="trailing" constant="20" id="R2z-D1-qwZ"/>
+                                            <constraint firstItem="F7J-tb-qVy" firstAttribute="top" secondItem="3kN-lr-Mwd" secondAttribute="top" constant="32" id="cqZ-gv-2IV"/>
+                                            <constraint firstAttribute="trailing" secondItem="7kn-GC-hhc" secondAttribute="trailing" constant="20" id="ksq-qY-zdf"/>
+                                            <constraint firstItem="7kn-GC-hhc" firstAttribute="centerY" secondItem="F7J-tb-qVy" secondAttribute="centerY" id="qXu-ER-9L2"/>
+                                            <constraint firstAttribute="bottom" secondItem="F7J-tb-qVy" secondAttribute="bottom" constant="32" id="uej-T7-opE"/>
                                         </constraints>
-                                        <color key="tintColor" name="AccentColor"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="signpost.right.fill" catalog="system" title="Должности"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <segue destination="wRy-Vk-txy" kind="show" id="crk-l2-et2"/>
+                                            <outletCollection property="gestureRecognizers" destination="S7f-fx-gO4" appends="YES" id="kQp-Ad-FFJ"/>
                                         </connections>
-                                    </button>
+                                    </view>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ZK3-YI-9Ip"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="ZK3-YI-9Ip" firstAttribute="trailing" secondItem="mAJ-LO-8QC" secondAttribute="trailing" id="56E-n0-mMt"/>
+                            <constraint firstItem="ZK3-YI-9Ip" firstAttribute="trailing" secondItem="mAJ-LO-8QC" secondAttribute="trailing" constant="16" id="56E-n0-mMt"/>
                             <constraint firstItem="mAJ-LO-8QC" firstAttribute="top" secondItem="ZK3-YI-9Ip" secondAttribute="top" id="69W-gF-i6m"/>
-                            <constraint firstItem="mAJ-LO-8QC" firstAttribute="leading" secondItem="ZK3-YI-9Ip" secondAttribute="leading" id="QK0-yI-jYZ"/>
+                            <constraint firstItem="mAJ-LO-8QC" firstAttribute="leading" secondItem="ZK3-YI-9Ip" secondAttribute="leading" constant="16" id="QK0-yI-jYZ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Сотрудники" id="TPp-Es-92g"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LVW-Tv-Rad" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="12X-rO-z2y" userLabel="Орг структура">
+                    <connections>
+                        <segue destination="WDg-je-fmK" kind="show" id="BgV-kO-YW9"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="EEu-cg-iNL" userLabel="Группы">
+                    <connections>
+                        <segue destination="Rlt-Wq-YOh" kind="show" id="dyZ-Zp-BJk"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="S7f-fx-gO4" userLabel="Должности">
+                    <connections>
+                        <segue destination="wRy-Vk-txy" kind="show" id="HsH-Y4-CWD"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="916" y="2275"/>
+            <point key="canvasLocation" x="915.94202898550736" y="2274.7767857142858"/>
         </scene>
         <!--Документы-->
         <scene sceneID="4lC-B4-8A9">
@@ -1216,7 +1306,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oZq-Cg-Y8I">
-                                        <rect key="frame" x="346" y="4.5" width="43" height="31"/>
+                                        <rect key="frame" x="344" y="4.5" width="45" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="xmark.app.fill" catalog="system"/>
                                     </button>
@@ -1386,7 +1476,7 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ehV-AX-FFu">
-                                        <rect key="frame" x="350.5" y="10" width="43.5" height="31"/>
+                                        <rect key="frame" x="349.5" y="10" width="44.5" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="bell.fill" catalog="system"/>
                                     </button>
@@ -1402,7 +1492,7 @@
                                 <rect key="frame" x="10" y="178" width="394" height="236"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZwM-Uw-7Ao">
-                                        <rect key="frame" x="0.0" y="0.0" width="153.5" height="31"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="155.5" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="square.stack" catalog="system" title="Поликлиники" imagePadding="20"/>
                                         <connections>
@@ -1410,27 +1500,27 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B6x-WN-L6U">
-                                        <rect key="frame" x="0.0" y="41" width="105" height="31"/>
+                                        <rect key="frame" x="0.0" y="41" width="107" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="person.2" catalog="system" title="Роли" imagePadding="20"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WcX-mb-fkG">
-                                        <rect key="frame" x="0.0" y="82" width="162.5" height="31"/>
+                                        <rect key="frame" x="0.0" y="82" width="163.5" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="lock" catalog="system" title="Права доступа" imagePadding="20"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vrU-cA-zak">
-                                        <rect key="frame" x="0.0" y="123" width="142.5" height="31"/>
+                                        <rect key="frame" x="0.0" y="123" width="144.5" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="person.fill.questionmark" catalog="system" title="Должности" imagePadding="20"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bgu-UX-beq">
-                                        <rect key="frame" x="0.0" y="164" width="146.5" height="31"/>
+                                        <rect key="frame" x="0.0" y="164" width="148.5" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="arrow.up.arrow.down" catalog="system" title="Замещение" imagePadding="20"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L4A-1r-NXP">
-                                        <rect key="frame" x="0.0" y="205" width="210" height="31"/>
+                                        <rect key="frame" x="0.0" y="205" width="211" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="trash.fill" catalog="system" title="Удаление сотрудника" imagePadding="20"/>
                                     </button>
@@ -1851,6 +1941,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemPinkColor">
             <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
