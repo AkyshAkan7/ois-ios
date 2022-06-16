@@ -8,25 +8,29 @@
 import UIKit
 
 class ProfileViewController: UIViewController {
-    @IBOutlet weak var name: UIStackView!
     
+    
+    @IBOutlet weak var nameTextField: UILabel!
     @IBOutlet weak var emailTextField: UILabel!
     @IBOutlet weak var iinTextField: UILabel!
+    var manager = ProfileManager()
     override func viewDidLoad() {
         super.viewDidLoad()
+        manager.delegate = self
+        manager.performRequest()
+    }
 
-        // Do any additional setup after loading the view.
+}
+
+extension ProfileViewController: ProfileManagerDelegate {
+    func didLoadData(profile: ProfileData) {
+        nameTextField.text = profile.fullname
+        emailTextField.text = profile.email
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func didFailWithError(error: String) {
+        print(error)
     }
-    */
-
+    
+    
 }

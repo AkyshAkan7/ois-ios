@@ -1635,7 +1635,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="1OA-VH-f3f">
-                                                <rect key="frame" x="0.0" y="29" width="394" height="216"/>
+                                                <rect key="frame" x="0.0" y="28.5" width="394" height="216"/>
                                             </datePicker>
                                         </subviews>
                                     </stackView>
@@ -1649,7 +1649,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="erY-5C-uaQ">
-                                                <rect key="frame" x="0.0" y="28" width="394" height="216"/>
+                                                <rect key="frame" x="0.0" y="28.5" width="394" height="216"/>
                                                 <date key="date" timeIntervalSinceReferenceDate="682202940.857427">
                                                     <!--2022-08-14 20:49:00 +0000-->
                                                 </date>
@@ -2105,7 +2105,7 @@
             </objects>
             <point key="canvasLocation" x="2805.7971014492755" y="1581.6964285714284"/>
         </scene>
-        <!--Ghjabkm-->
+        <!--Профиль-->
         <scene sceneID="DJM-KY-9cQ">
             <objects>
                 <viewController id="rWp-zg-bVk" customClass="ProfileViewController" customModule="ois_ios" customModuleProvider="target" sceneMemberID="viewController">
@@ -2126,7 +2126,7 @@
                                             <constraint firstAttribute="width" constant="100" id="pao-KH-SCV"/>
                                         </constraints>
                                     </imageView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="1V9-bK-kvd">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="1V9-bK-kvd">
                                         <rect key="frame" x="186" y="78" width="42.5" height="61"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zBY-uA-sPi">
@@ -2136,7 +2136,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MZ5-f9-Wfs">
-                                                <rect key="frame" x="2" y="40.5" width="40.5" height="20.5"/>
+                                                <rect key="frame" x="1" y="40.5" width="40.5" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -2202,10 +2202,10 @@
                             <constraint firstItem="pUM-NQ-BLb" firstAttribute="leading" secondItem="dWa-kX-NGN" secondAttribute="leading" id="zTR-6K-wBD"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Ghjabkm" image="person.crop.circle.fill" catalog="system" id="QLL-9b-CUk"/>
+                    <tabBarItem key="tabBarItem" title="Профиль" image="person.crop.circle.fill" catalog="system" id="QLL-9b-CUk"/>
                     <connections>
                         <outlet property="emailTextField" destination="MZ5-f9-Wfs" id="fff-Fr-HTR"/>
-                        <outlet property="name" destination="1V9-bK-kvd" id="i5w-4q-d1p"/>
+                        <outlet property="nameTextField" destination="zBY-uA-sPi" id="XQP-Et-02r"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PnO-O7-s1A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

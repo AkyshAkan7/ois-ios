@@ -8,8 +8,10 @@
 import Foundation
 
 
-struct ProfileData {
+struct ProfileData: Codable {
     let username: String
     let email: String
-    let fullName: String
+    let fullname: String
+    let homeAddress: String?
+    let iin: String?
 }

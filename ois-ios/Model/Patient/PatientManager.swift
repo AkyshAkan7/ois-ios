@@ -72,8 +72,7 @@ struct PatientManager {
         ]
         let parameters: Parameters = [
             "relativeFullName": "\(relativeFullName)",
-            "relativePhoneNumber": "\(relativePhoneNumber)",
-            "user": "\(userPar)"
+            "relativePhoneNumber": "\(relativePhoneNumber)"
         ]
         
         let request = AF.request("http://localhost:8080/api/v1/dict/patients", method: .post, parameters: parameters,encoding: JSONEncoding.default, headers: headers).response {
