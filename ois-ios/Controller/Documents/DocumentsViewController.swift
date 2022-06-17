@@ -11,10 +11,10 @@ import SwiftUI
 class DocumentsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
-    var documents: [DocumentsModel]? = nil
     
     var documentsManager = DocumentsManager()
     var selected: DocumentsModel? = nil
+    var selectedIndex = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,14 +22,19 @@ class DocumentsViewController: UIViewController {
         tableView.dataSource = self
         tableView.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "DefaultCell")
         documentsManager.delegate = self
-        documentsManager.performRequest()
+//        documentsManager.performRequest()
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toSpecificDocument"{
             let destinationVC = segue.destination as! SpecificDocumentViewController
             destinationVC.document = selected
+            destinationVC.index = selectedIndex
         }
     }
 }
@@ -41,18 +46,19 @@ extension DocumentsViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return documents?.count ?? 0
+        return Doc.documentsList.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DefaultCell") as! TableViewCell
         
-        cell.initialize(mainLabel: documents?[indexPath.row].label ?? "N/A", secondLabel: documents?[indexPath.row].creator.username ?? "N/A", thirdLabel: documents?[indexPath.row].creator.name ?? "N/A", image: documents?[indexPath.row].creator.avatarUrl ?? "")
+        cell.initialize(mainLabel: Doc.documentsList[indexPath.row].label ?? "N/A", secondLabel: Doc.documentsList[indexPath.row].creator.username ?? "N/A", thirdLabel: Doc.documentsList[indexPath.row].creator.name ?? "N/A", image: Doc.documentsList[indexPath.row].creator.avatarUrl ?? "")
             
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selected = documents?[indexPath.row]
+        selected = Doc.documentsList[indexPath.row]
+        selectedIndex = indexPath.row
         performSegue(withIdentifier: "toSpecificDocument", sender: self)
     }
 }
@@ -60,12 +66,15 @@ extension DocumentsViewController: UITableViewDataSource, UITableViewDelegate {
 
 
 extension DocumentsViewController: DocumentsManagerDelegate {
+    func didGetTemplates(_ positionManager: DocumentsManager, models: [DocumentTemplateModel]) {
+        
+    }
+    
     func shouldUpdateUI(status: Bool) {
-        documentsManager.performRequest()
+        tableView.reloadData()
     }
     
     func didUpdateData(_ positionManager: DocumentsManager, models: [DocumentsModel]) {
-        self.documents = models
         tableView.reloadData()
     }
     

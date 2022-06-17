@@ -21,6 +21,10 @@ class PatientViewController: UIViewController {
         manager.performRequest()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        manager.performRequest()
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toSpecificPatient" {
             let selectedVC = segue.destination as! SpecificPatientViewController
@@ -44,7 +48,7 @@ extension PatientViewController: UITableViewDataSource, UITableViewDelegate {
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! UITableViewCell
-        if let name = patients?[indexPath.row].user?.name {
+        if let name = patients?[indexPath.row].relativeFullName {
             cell.textLabel?.text = name
         } else {
             cell.textLabel?.text = "N/A"
@@ -64,7 +68,7 @@ extension PatientViewController: UITableViewDataSource, UITableViewDelegate {
 
 extension PatientViewController: PatientManagerDelegate {
     func didDelete(status: Bool) {
-        
+        manager.performRequest()
     }
     
     func didSaveData(status: Bool) {
@@ -78,6 +82,7 @@ extension PatientViewController: PatientManagerDelegate {
     
     func didFailWithError(error: String) {
         print(error)
+        
     }
     
     

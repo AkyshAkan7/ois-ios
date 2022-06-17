@@ -71,6 +71,77 @@ print("Loading")
             (responseData) in
             guard let data = responseData.data else {return}
             do {
+                self.delegate?.didCreateGroup(succes: true)
+                if let code = responseData.response?.statusCode {
+                    
+                    
+                    
+                }
+            } catch {
+                print(error)
+                self.delegate?.didFailWithError(error: error.localizedDescription)
+                self.delegate?.didCreateGroup(succes: true)
+            }
+        }
+        request.responseJSON { (data) in
+            print(data)
+        }
+        self.delegate?.didCreateGroup(succes: false)
+
+    }
+    
+    func changeGroup(groupname: String, label: String, description: String) {
+print("Loading")
+        let token = defaults.string(forKey: "token")!
+        let headers: HTTPHeaders = [
+            "Authorization": "Bearer " + token
+        ]
+        let parameters: [String: Any] = [
+            "groupname": "\(groupname)",
+            "label": "\(label)",
+            "description": "\(description)",
+            "tenant": 1
+        ]
+        
+        let request = AF.request("http://localhost:8080/api/v1/groups/\(groupname)", method: .put, parameters: parameters,encoding: JSONEncoding.default, headers: headers).response {
+            (responseData) in
+            guard let data = responseData.data else {return}
+            do {
+                self.delegate?.didCreateGroup(succes: true)
+                if let code = responseData.response?.statusCode {
+                    
+                    
+                    
+                }
+            } catch {
+                print(error)
+                self.delegate?.didFailWithError(error: error.localizedDescription)
+                self.delegate?.didCreateGroup(succes: true)
+            }
+        }
+        request.responseJSON { (data) in
+            print(data)
+        }
+        self.delegate?.didCreateGroup(succes: false)
+
+    }
+    func deleteGroup(groupname: String, label: String, description: String) {
+print("Loading")
+        let token = defaults.string(forKey: "token")!
+        let headers: HTTPHeaders = [
+            "Authorization": "Bearer " + token
+        ]
+        let parameters: [String: Any] = [
+            "groupname": "\(groupname)",
+            "label": "\(label)",
+            "description": "\(description)",
+            "tenant": 1
+        ]
+        
+        let request = AF.request("http://localhost:8080/api/v1/groups/\(groupname)", method: .delete, parameters: parameters,encoding: JSONEncoding.default, headers: headers).response {
+            (responseData) in
+            guard let data = responseData.data else {return}
+            do {
                 if let code = responseData.response?.statusCode {
                     
                     self.delegate?.didCreateGroup(succes: true)
@@ -79,11 +150,13 @@ print("Loading")
             } catch {
                 print(error)
                 self.delegate?.didFailWithError(error: error.localizedDescription)
+                self.delegate?.didCreateGroup(succes: true)
             }
         }
         request.responseJSON { (data) in
             print(data)
         }
+        self.delegate?.didCreateGroup(succes: true)
 
     }
 }

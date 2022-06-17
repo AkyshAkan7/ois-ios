@@ -26,12 +26,12 @@ class TableViewCell: UITableViewCell {
     }
     
     func initialize(mainLabel: String, secondLabel: String, thirdLabel: String, image: String) {
-        if let imageUrl = URL(string: image) {
-            let scale = UIScreen.main.scale
-            let thumbnailSize = CGSize(width: 200 * scale, height: 200 * scale)
-                img.sd_setImage(with: imageUrl, placeholderImage: UIImage(named: "doc.fill"), context: [.imageThumbnailPixelSize : thumbnailSize])
-
-        }
+//        if let imageUrl = URL(string: image) {
+//            let scale = UIScreen.main.scale
+//            let thumbnailSize = CGSize(width: 200 * scale, height: 200 * scale)
+//                img.sd_setImage(with: imageUrl, placeholderImage: UIImage(named: "doc.fill"), context: [.imageThumbnailPixelSize : thumbnailSize])
+//
+//        }
         self.mainLabel.text = mainLabel
         self.secondLabel.text = secondLabel
         self.thirdLabel.text = thirdLabel

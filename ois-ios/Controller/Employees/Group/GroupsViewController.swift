@@ -7,12 +7,16 @@
 
 import UIKit
 import SwiftUI
+import SystemConfiguration
 
 class GroupsViewController: UIViewController {
 
     @IBOutlet var tableView: UITableView!
     var groups: [GroupsModel]? = nil
     var groupsManager = GroupsManager()
+    
+    var isNew = false
+    var selectedGroup: GroupsModel? = nil
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
@@ -21,15 +25,23 @@ class GroupsViewController: UIViewController {
         groupsManager.performRequest(with: "", email: "", password: "")
         
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        groupsManager.performRequest(with: "", email: "", password: "")
+        
+    }
 
     @IBAction func addPressed(_ sender: Any) {
         performSegue(withIdentifier: "toCreateGroup", sender: self)
+        isNew = true
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toCreateGroup" {
           let secondView = segue.destination as! CreateGroupViewController
           secondView.delegate = self
+        secondView.isNew = self.isNew
+          secondView.group = selectedGroup
         }
     }
 }
@@ -49,6 +61,11 @@ extension GroupsViewController: UITableViewDelegate, UITableViewDataSource{
         cell.textLabel?.text = groups?[indexPath.row].label
         cell.detailTextLabel?.text = groups?[indexPath.row].description
         return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedGroup = groups?[indexPath.row]
+        isNew = false
+        performSegue(withIdentifier: "toCreateGroup", sender: self)
     }
 }
 

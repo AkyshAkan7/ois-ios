@@ -22,7 +22,6 @@ struct DocumentTemplateData: Codable {
     let attachment: String
     let documentType: DocumentTypeData
     let process: DocumentTypeData
-    
 }
 
 struct DocumentTypeData: Codable {
