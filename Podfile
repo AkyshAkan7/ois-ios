@@ -9,6 +9,6 @@ target 'ois-ios' do
 	pod 'Alamofire'
 	pod 'NotificationBanner', '~> 1.0'
 	pod 'SDWebImage', '~> 5.0'
-
-
+ 	pod 'paper-onboarding'
+	pod 'SnapKit'
 end

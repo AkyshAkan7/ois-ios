@@ -58,6 +58,7 @@
 		77DAE165284005FD005EE714 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DAE164284005FC005EE714 /* ListViewController.swift */; };
 		77E471B72857FFE8009093AF /* SpecificPatientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E471B62857FFE8009093AF /* SpecificPatientViewController.swift */; };
 		95734464DE2DF5DFE02EF5AA /* Pods_ois_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B70254EE5B43BA4C3BEDA39 /* Pods_ois_ios.framework */; };
+		D7E00DD4285CF38F0088147E /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E00DD3285CF38F0088147E /* OnboardingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -116,6 +117,7 @@
 		77DAE164284005FC005EE714 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		77E471B62857FFE8009093AF /* SpecificPatientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecificPatientViewController.swift; sourceTree = "<group>"; };
 		9966ABA9D335BA587B1A3E36 /* Pods-ois-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ois-ios.release.xcconfig"; path = "Target Support Files/Pods-ois-ios/Pods-ois-ios.release.xcconfig"; sourceTree = "<group>"; };
+		D7E00DD3285CF38F0088147E /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -350,6 +352,7 @@
 				77C929E52821C06700A44BBD /* LoginViewController.swift */,
 				77C92A052821CFBD00A44BBD /* RestoreAccessViewController.swift */,
 				77DAE164284005FC005EE714 /* ListViewController.swift */,
+				D7E00DD3285CF38F0088147E /* OnboardingViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -529,6 +532,7 @@
 				778DC4D3285BCD8B00B8EF7B /* SpecificTreatmentViewController.swift in Sources */,
 				7783116B2853FCAF0016EE99 /* SpecificDocumentViewController.swift in Sources */,
 				7783116D285400AA0016EE99 /* CreateGroupViewController.swift in Sources */,
+				D7E00DD4285CF38F0088147E /* OnboardingViewController.swift in Sources */,
 				778311692853E9380016EE99 /* CreatePoistionViewController.swift in Sources */,
 				778DC4DB285BE71100B8EF7B /* ProfileData.swift in Sources */,
 				77BED92C2854236500482EA9 /* PatientModel.swift in Sources */,
