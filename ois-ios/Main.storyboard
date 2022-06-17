@@ -791,18 +791,137 @@
         <!--Создание документа-->
         <scene sceneID="VZ1-Hy-vkM">
             <objects>
-                <viewController id="t2y-Yj-3ar" sceneMemberID="viewController">
+                <viewController id="t2y-Yj-3ar" customClass="NewDocumentViewController" customModule="ois_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LgD-AJ-v3Z">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="Wnd-Vf-A2G">
+                                <rect key="frame" x="10" y="98" width="394" height="264.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="d4z-kE-b3A">
+                                        <rect key="frame" x="0.0" y="0.0" width="394" height="71.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Номер документа" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hlw-ah-6jE">
+                                                <rect key="frame" x="0.0" y="0.0" width="394" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HyA-3h-QXk">
+                                                <rect key="frame" x="0.0" y="37.5" width="394" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="hvt-Xz-E9r">
+                                        <rect key="frame" x="0.0" y="96.5" width="394" height="71.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Название" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5na-ye-FgF">
+                                                <rect key="frame" x="0.0" y="0.0" width="394" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Le-xa-4EK">
+                                                <rect key="frame" x="0.0" y="37.5" width="394" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="jjE-Sl-fbr">
+                                        <rect key="frame" x="0.0" y="193" width="394" height="71.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Описание" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="33k-Wh-DVZ">
+                                                <rect key="frame" x="0.0" y="0.0" width="394" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qvv-6D-Eg3">
+                                                <rect key="frame" x="0.0" y="37.5" width="394" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Шаблон" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="76d-5h-7Xw">
+                                <rect key="frame" x="20" y="392" width="64" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="IgC-k7-5tU">
+                                <rect key="frame" x="20" y="432.5" width="374" height="238"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="238" id="tc7-8T-lkW"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="AdY-8u-zP9" style="IBUITableViewCellStyleDefault" id="3BP-xD-eU9">
+                                        <rect key="frame" x="0.0" y="44.5" width="374" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3BP-xD-eU9" id="ey3-ZC-UaS">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="AdY-8u-zP9">
+                                                    <rect key="frame" x="20" y="0.0" width="334" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="t2y-Yj-3ar" id="iP6-43-Jxj"/>
+                                    <outlet property="delegate" destination="t2y-Yj-3ar" id="J6P-7x-n5y"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="irO-jo-uwl">
+                                <rect key="frame" x="159" y="768" width="96.5" height="31"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Сохранить"/>
+                                <connections>
+                                    <action selector="savePressed:" destination="t2y-Yj-3ar" eventType="touchUpInside" id="3kj-N6-fpn"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="nRb-zC-aSv"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="nRb-zC-aSv" firstAttribute="bottom" secondItem="irO-jo-uwl" secondAttribute="bottom" constant="14" id="4kU-i6-rXm"/>
+                            <constraint firstItem="IgC-k7-5tU" firstAttribute="top" secondItem="76d-5h-7Xw" secondAttribute="bottom" constant="20" id="82j-zc-FI2"/>
+                            <constraint firstItem="76d-5h-7Xw" firstAttribute="leading" secondItem="IgC-k7-5tU" secondAttribute="leading" id="B3n-2E-EzW"/>
+                            <constraint firstItem="Wnd-Vf-A2G" firstAttribute="top" secondItem="nRb-zC-aSv" secondAttribute="top" constant="10" id="Qfn-yt-jnx"/>
+                            <constraint firstItem="Wnd-Vf-A2G" firstAttribute="leading" secondItem="nRb-zC-aSv" secondAttribute="leading" constant="10" id="a0s-CG-lEX"/>
+                            <constraint firstItem="IgC-k7-5tU" firstAttribute="leading" secondItem="nRb-zC-aSv" secondAttribute="leading" constant="20" id="b6M-f8-Kon"/>
+                            <constraint firstItem="76d-5h-7Xw" firstAttribute="top" secondItem="Wnd-Vf-A2G" secondAttribute="bottom" constant="29.5" id="sJr-g0-Nnl"/>
+                            <constraint firstItem="nRb-zC-aSv" firstAttribute="trailing" secondItem="IgC-k7-5tU" secondAttribute="trailing" constant="20" id="vaa-kb-xEc"/>
+                            <constraint firstItem="irO-jo-uwl" firstAttribute="centerX" secondItem="LgD-AJ-v3Z" secondAttribute="centerX" id="vbW-b5-Brs"/>
+                            <constraint firstItem="nRb-zC-aSv" firstAttribute="trailing" secondItem="Wnd-Vf-A2G" secondAttribute="trailing" constant="10" id="y91-aZ-HUE"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Создание документа" id="Kxt-a4-CsV"/>
+                    <connections>
+                        <outlet property="descriptionTextField" destination="Qvv-6D-Eg3" id="wFK-vs-aUe"/>
+                        <outlet property="labelTextField" destination="9Le-xa-4EK" id="x8u-jw-rS9"/>
+                        <outlet property="tableView" destination="IgC-k7-5tU" id="agq-Hm-4h1"/>
+                        <outlet property="uidTextField" destination="HyA-3h-QXk" id="Vae-Id-7OX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="642-x9-Of8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4594" y="2328"/>
+            <point key="canvasLocation" x="4592.753623188406" y="2327.0089285714284"/>
         </scene>
         <!--Пациенты-->
         <scene sceneID="hna-QD-UIc">
@@ -1635,7 +1754,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="1OA-VH-f3f">
-                                                <rect key="frame" x="0.0" y="28.5" width="394" height="216"/>
+                                                <rect key="frame" x="0.0" y="29" width="394" height="216"/>
                                             </datePicker>
                                         </subviews>
                                     </stackView>
@@ -1649,7 +1768,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="erY-5C-uaQ">
-                                                <rect key="frame" x="0.0" y="28.5" width="394" height="216"/>
+                                                <rect key="frame" x="0.0" y="28" width="394" height="216"/>
                                                 <date key="date" timeIntervalSinceReferenceDate="682202940.857427">
                                                     <!--2022-08-14 20:49:00 +0000-->
                                                 </date>

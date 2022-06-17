@@ -10,6 +10,7 @@ import Alamofire
 
 protocol DocumentsManagerDelegate {
     func didUpdateData(_ positionManager: DocumentsManager, models: [DocumentsModel])
+    func didGetTemplates(_ positionManager: DocumentsManager, models: [DocumentTemplateModel])
     func didFailWithError(error: String)
     func shouldUpdateUI(status: Bool)
 }
@@ -61,13 +62,43 @@ struct DocumentsManager {
     }
 }
     
-    func deleteDocumentRequest(id: String) {
+    func deleteDocumentRequest(index: Int) {
+        Doc.documentsList.remove(at: index)
+        self.delegate?.shouldUpdateUI(status: true)
+//        let token = defaults.string(forKey: "token")!
+//        let headers: HTTPHeaders = [
+//            "Authorization": "Bearer " + token
+//        ]
+//
+//        let request = AF.request("http://localhost:8080/api/v1/dicts/documents/\(id)", method: .delete, headers: headers).response {
+//            (responseData) in
+//            do {
+//                if let code = responseData.response?.statusCode {
+//
+//                    if code == 200 {
+//                        self.delegate?.shouldUpdateUI(status: true)
+//
+//                    } else if code >= 400 {
+//                        self.delegate?.didFailWithError(error: "error occured")
+//                    }
+//                }
+//            } catch {
+//                print(error)
+//                self.delegate?.didFailWithError(error: error.localizedDescription)
+//            }
+//        }
+//        request.responseJSON { (data) in
+//            print(data)
+//        }
+    }
+    
+    func saveDocumentRequest() {
         let token = defaults.string(forKey: "token")!
         let headers: HTTPHeaders = [
             "Authorization": "Bearer " + token
         ]
         
-        let request = AF.request("http://localhost:8080/api/v1/dicts/documents/\(id)", method: .delete, headers: headers).response {
+        let request = AF.request("http://localhost:8080/api/v1/dicts/documents/", method: .delete, headers: headers).response {
             (responseData) in
             do {
                 if let code = responseData.response?.statusCode {
@@ -89,19 +120,29 @@ struct DocumentsManager {
         }
     }
     
-    func saveDocumentRequest() {
+    func getDocumentTemplate() {
         let token = defaults.string(forKey: "token")!
         let headers: HTTPHeaders = [
             "Authorization": "Bearer " + token
         ]
         
-        let request = AF.request("http://localhost:8080/api/v1/dicts/documents/", method: .delete, headers: headers).response {
+        let request = AF.request("http://localhost:8080/api/v1/dicts/document-templates/", method: .get, headers: headers).response {
             (responseData) in
             do {
+                guard let data = responseData.data else {return}
                 if let code = responseData.response?.statusCode {
-                                
+//                    DocumentTemplateData
+                    let decoder = JSONDecoder()
+                    let documents = try decoder.decode([DocumentTemplateData].self, from: data)
+                    var documentsArray: [DocumentTemplateModel] = []
+                    
+                    
+                    for doc in documents {
+                        documentsArray.append(DocumentTemplateModel(uid: doc.uid ?? "", label: doc.label, attachment: doc.attachment, documentType: DocumentTypeModel(id: doc.documentType.id, label: doc.documentType.label, shortLabel: doc.documentType.shortLabel, code: doc.documentType.code), process: DocumentTypeModel(id: doc.process.id, label: doc.process.label, shortLabel: doc.process.shortLabel, code: doc.process.code))
+                        )
+                    }
                     if code == 200 {
-                        self.delegate?.shouldUpdateUI(status: true)
+                        self.delegate?.didGetTemplates(self, models: documentsArray)
                         
                     } else if code >= 400 {
                         self.delegate?.didFailWithError(error: "error occured")

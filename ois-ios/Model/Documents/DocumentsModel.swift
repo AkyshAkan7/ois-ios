@@ -22,7 +22,7 @@ struct DocumentTemplateModel {
     let attachment: String
     let documentType: DocumentTypeModel
     let process: DocumentTypeModel
-    
+    var selected: Bool = false
 }
 
 struct DocumentTypeModel {
@@ -57,6 +57,13 @@ struct NationalityModel: Codable {
 struct Doc {
     
     static var documentsList = [
-        DocumentsModel(uid: "5678", label: "Document", description: "SomeDocument", documentTemplate: DocumentTemplateModel(uid: "678", label: "template", attachment: "none", documentType: DocumentTypeModel(id: 789, label: "jhjk", shortLabel: "jhjk", code: "234"), process: DocumentTypeModel(id: 2, label: "234", shortLabel: "d", code: "234")), creator: CreatorModel(username: "person", email: "none", iin: "656789", name: "Person", familyName: "Persons", mobilePhone: "98765678", patronymic: "76789", avatarUrl: "avatar.png"))
+        DocumentsModel(uid: "5678", label: "Документ", description: "Документ", documentTemplate: DocumentTemplateModel(uid: "678", label: "template", attachment: "none", documentType: DocumentTypeModel(id: 789, label: "jhjk", shortLabel: "jhjk", code: "234"), process: DocumentTypeModel(id: 2, label: "234", shortLabel: "d", code: "234")), creator: CreatorModel(username: "person", email: "none", iin: "656789", name: "Person", familyName: "Persons", mobilePhone: "98765678", patronymic: "76789", avatarUrl: "avatar.png")),
+        DocumentsModel(uid: "3432", label: "Document", description: "SomeDocument", documentTemplate: templates[0], creator: CreatorModel(username: "person", email: "none", iin: "656789", name: "Person", familyName: "Persons", mobilePhone: "98765678", patronymic: "76789", avatarUrl: "avatar.png")),
+        DocumentsModel(uid: "9280", label: "Document", description: "SomeDocument", documentTemplate: templates[0], creator: CreatorModel(username: "person", email: "none", iin: "656789", name: "Person", familyName: "Persons", mobilePhone: "98765678", patronymic: "76789", avatarUrl: "avatar.png")),
+        DocumentsModel(uid: "1232", label: "Document", description: "SomeDocument", documentTemplate: DocumentTemplateModel(uid: "678", label: "template", attachment: "none", documentType: DocumentTypeModel(id: 789, label: "jhjk", shortLabel: "jhjk", code: "234"), process: DocumentTypeModel(id: 2, label: "234", shortLabel: "d", code: "234")), creator: CreatorModel(username: "person", email: "none", iin: "656789", name: "Person", familyName: "Persons", mobilePhone: "98765678", patronymic: "76789", avatarUrl: "avatar.png"))
+    ]
+    
+    static var templates = [
+        DocumentTemplateModel(uid: "122", label: "Шаблон", attachment: "", documentType: DocumentTypeModel(id: 123, label: "Shabblon", shortLabel: "shablon", code: "234"), process: DocumentTypeModel(id: 121, label: "ПРивика", shortLabel: "прив.", code: "232")),
     ]
 }

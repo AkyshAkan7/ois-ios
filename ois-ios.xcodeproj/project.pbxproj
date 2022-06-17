@@ -35,6 +35,7 @@
 		778DC4D6285BE38A00B8EF7B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778DC4D5285BE38A00B8EF7B /* ProfileViewController.swift */; };
 		778DC4D9285BE63900B8EF7B /* ProfileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778DC4D8285BE63900B8EF7B /* ProfileManager.swift */; };
 		778DC4DB285BE71100B8EF7B /* ProfileData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778DC4DA285BE71100B8EF7B /* ProfileData.swift */; };
+		778DC4DD285C0A8B00B8EF7B /* NewDocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778DC4DC285C0A8B00B8EF7B /* NewDocumentViewController.swift */; };
 		77BED9272854228800482EA9 /* PatientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BED9262854228800482EA9 /* PatientViewController.swift */; };
 		77BED92A285422EC00482EA9 /* PatientData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BED929285422EC00482EA9 /* PatientData.swift */; };
 		77BED92C2854236500482EA9 /* PatientModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BED92B2854236500482EA9 /* PatientModel.swift */; };
@@ -90,6 +91,7 @@
 		778DC4D5285BE38A00B8EF7B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		778DC4D8285BE63900B8EF7B /* ProfileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileManager.swift; sourceTree = "<group>"; };
 		778DC4DA285BE71100B8EF7B /* ProfileData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileData.swift; sourceTree = "<group>"; };
+		778DC4DC285C0A8B00B8EF7B /* NewDocumentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDocumentViewController.swift; sourceTree = "<group>"; };
 		77BED9262854228800482EA9 /* PatientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientViewController.swift; sourceTree = "<group>"; };
 		77BED929285422EC00482EA9 /* PatientData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientData.swift; sourceTree = "<group>"; };
 		77BED92B2854236500482EA9 /* PatientModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientModel.swift; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 			children = (
 				7783115F2853D5180016EE99 /* DocumentsViewController.swift */,
 				7783116A2853FCAE0016EE99 /* SpecificDocumentViewController.swift */,
+				778DC4DC285C0A8B00B8EF7B /* NewDocumentViewController.swift */,
 			);
 			path = Documents;
 			sourceTree = "<group>";
@@ -518,6 +521,7 @@
 				7783114A2852984E0016EE99 /* OrgsModel.swift in Sources */,
 				77C92A0B2822799A00A44BBD /* Item.swift in Sources */,
 				77831146285297490016EE99 /* OrgsData.swift in Sources */,
+				778DC4DD285C0A8B00B8EF7B /* NewDocumentViewController.swift in Sources */,
 				778311672853DC620016EE99 /* DocumentsManager.swift in Sources */,
 				77C929E22821C06700A44BBD /* AppDelegate.swift in Sources */,
 				7783116F285406AD0016EE99 /* SpecificPositionViewController.swift in Sources */,
